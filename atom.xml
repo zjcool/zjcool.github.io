@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>·想不到一个好听又能装逼的名字·</title>
-  <icon>https://www.gravatar.com/avatar/691b8294e5b0948fac234e3036ca8216</icon>
+  
   <subtitle>有股强烈的学习欲望，幸好我自制力强，压下去了</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-07T11:35:53.905Z</updated>
+  <updated>2018-12-07T18:01:29.190Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>Zj</name>
-    <email>280828919@qq.com</email>
+    <name>eden</name>
+    
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
@@ -21,9 +21,17 @@
     <link href="http://yoursite.com/2018/12/07/prometheus%E5%AD%A6%E4%B9%A0/"/>
     <id>http://yoursite.com/2018/12/07/prometheus学习/</id>
     <published>2018-12-07T11:32:14.000Z</published>
-    <updated>2018-12-07T11:35:53.905Z</updated>
+    <updated>2018-12-07T18:01:29.190Z</updated>
     
     <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;人的一切痛苦，本质上都是对自己无能的愤怒。
+        
+      
     
     </summary>
     
