@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>·想不到一个好听又能装逼的名字·</title>
+  <icon>https://www.gravatar.com/avatar/691b8294e5b0948fac234e3036ca8216</icon>
+  <subtitle>有股强烈的学习欲望，幸好我自制力强，压下去了</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-12-07T11:35:53.905Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Zj</name>
+    <email>280828919@qq.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>prometheus学习</title>
+    <link href="http://yoursite.com/2018/12/07/prometheus%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2018/12/07/prometheus学习/</id>
+    <published>2018-12-07T11:32:14.000Z</published>
+    <updated>2018-12-07T11:35:53.905Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>第一个博客</title>
+    <link href="http://yoursite.com/2018/12/07/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2018/12/07/第一个博客/</id>
+    <published>2018-12-07T03:07:00.000Z</published>
+    <updated>2018-12-07T11:28:45.440Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;啦啦啦拉，大家晚上好呀&lt;del&gt;~&lt;/del&gt;&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
