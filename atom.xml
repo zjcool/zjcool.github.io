@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>·想不到一个好听又能装逼的名字·</title>
+  <title>Eden&#39;s Blog</title>
   
-  <subtitle>有股强烈的学习欲望，幸好我自制力强，压下去了</subtitle>
+  <subtitle>Peace &amp;&amp; Love</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-07T18:26:37.793Z</updated>
+  <updated>2018-12-07T20:02:36.757Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2018/12/07/prometheus%E5%AD%A6%E4%B9%A0/"/>
     <id>http://yoursite.com/2018/12/07/prometheus学习/</id>
     <published>2018-12-07T11:32:14.000Z</published>
-    <updated>2018-12-07T18:26:37.793Z</updated>
+    <updated>2018-12-07T20:02:36.757Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center">  <p>人的一切痛苦，本质上都是对自己无能的愤怒。 </p></blockquote>]]></content>
     
@@ -44,7 +44,7 @@
     <link href="http://yoursite.com/2018/12/07/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/2018/12/07/第一个博客/</id>
     <published>2018-12-07T03:07:00.000Z</published>
-    <updated>2018-12-07T18:26:37.793Z</updated>
+    <updated>2018-12-07T20:04:29.174Z</updated>
     
     <content type="html"><![CDATA[<p>啦啦啦拉，大家晚上好呀<del>~</del></p>]]></content>
     
