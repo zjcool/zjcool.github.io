@@ -35,7 +35,7 @@
     <link href="http://yoursite.com/2018/12/07/prometheus%E5%AD%A6%E4%B9%A0/"/>
     <id>http://yoursite.com/2018/12/07/prometheus学习/</id>
     <published>2018-12-07T11:32:14.000Z</published>
-    <updated>2018-12-07T20:02:36.757Z</updated>
+    <updated>2018-12-08T11:43:49.862Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center">  <p>人的一切痛苦，本质上都是对自己无能的愤怒。 </p></blockquote>]]></content>
     
@@ -50,6 +50,10 @@
     
     </summary>
     
+      <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="prometheus" scheme="http://yoursite.com/tags/prometheus/"/>
     
   </entry>
   
