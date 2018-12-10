@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-08T12:53:08.629Z</updated>
+  <updated>2018-12-10T07:21:46.630Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,16 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>你是不是在偷看~</title>
-    <link href="http://yoursite.com/2018/12/08/aaaaa/"/>
-    <id>http://yoursite.com/2018/12/08/aaaaa/</id>
-    <published>2018-12-08T03:56:00.000Z</published>
-    <updated>2018-12-08T12:53:08.629Z</updated>
+    <title>kubernetes学习笔记-17</title>
+    <link href="http://yoursite.com/2018/12/10/kubernetes%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-17/"/>
+    <id>http://yoursite.com/2018/12/10/kubernetes学习笔记-17/</id>
+    <published>2018-12-10T06:21:45.000Z</published>
+    <updated>2018-12-10T07:21:46.630Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天想跟大家分享的K8s中Deployment的水平扩展和收缩的实现。</p><p>在K8s中，<code>Deployment</code>是<strong>控制器模式</strong>的一个完整实现，其实现了一个重要的功能：<strong>水平扩展/收缩</strong>（horizontal scaling out/in）。</p><p>同时，k8s中，实现滚动更新的API对象称作：ReplicaSet。它的定义是Deployment的一个子集，<strong>更重要的是，Deployment控制器实际操纵的，是ReplicaSet对象，而不是Pod对象</strong>。同时我们需要明白，一个Deployment所管理的Pod，它的ownerReference是ReplicaSet。</p><p>下面我们来看一个Deployment：</p><pre><code>apiVersion: apps/v1kind: Deploymentmetadata:  name: nginx-deployment  labels:    app: nginxspec:  replicas: 3  selector:    matchLabels:      app: nginx  template:    metadata:      labels:        app: nginx    spec:      containers:      - name: nginx        image: nginx:1.7.9        ports:        - containerPort: 80</code></pre><p>可以看出，这里启动是3个版本为1.79的Nginx服务，那么在具体实现上，这个Deployment与ReplicaSet，以及Pod的关系如下图所示：<br><img src="/images/1.png" alt=""></p>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;p&gt;今天想跟大家分享的K8s中Deployment的水平扩展和收缩的实现。&lt;/p&gt;
+&lt;p&gt;在K8s中，&lt;code&gt;Deployment&lt;/code&gt;是&lt;strong&gt;控制器模式&lt;/strong&gt;的一个完整实现，其实现了一个重要的功能：&lt;strong&gt;水平扩展/收缩&lt;/stron
+      
+    
     </summary>
     
+      <category term="Kubernetes" scheme="http://yoursite.com/categories/Kubernetes/"/>
+    
+      <category term="技术学习" scheme="http://yoursite.com/categories/Kubernetes/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="K8s" scheme="http://yoursite.com/tags/K8s/"/>
+    
+      <category term="Deployment" scheme="http://yoursite.com/tags/Deployment/"/>
     
   </entry>
   
@@ -54,27 +70,6 @@
     
     
       <category term="prometheus" scheme="http://yoursite.com/tags/prometheus/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一个博客</title>
-    <link href="http://yoursite.com/2018/12/07/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://yoursite.com/2018/12/07/第一个博客/</id>
-    <published>2018-12-07T03:07:00.000Z</published>
-    <updated>2018-12-07T20:04:29.174Z</updated>
-    
-    <content type="html"><![CDATA[<p>啦啦啦拉，大家晚上好呀<del>~</del></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;啦啦啦拉，大家晚上好呀&lt;del&gt;~&lt;/del&gt;&lt;/p&gt;
-      
-    
-    </summary>
-    
     
   </entry>
   

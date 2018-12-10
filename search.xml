@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[你是不是在偷看~]]></title>
-    <url>%2F2018%2F12%2F08%2Faaaaa%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[kubernetes学习笔记-17]]></title>
+    <url>%2F2018%2F12%2F10%2Fkubernetes%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-17%2F</url>
+    <content type="text"><![CDATA[今天想跟大家分享的K8s中Deployment的水平扩展和收缩的实现。 在K8s中，Deployment是控制器模式的一个完整实现，其实现了一个重要的功能：水平扩展/收缩（horizontal scaling out/in）。 同时，k8s中，实现滚动更新的API对象称作：ReplicaSet。它的定义是Deployment的一个子集，更重要的是，Deployment控制器实际操纵的，是ReplicaSet对象，而不是Pod对象。同时我们需要明白，一个Deployment所管理的Pod，它的ownerReference是ReplicaSet。 下面我们来看一个Deployment： apiVersion: apps/v1 kind: Deployment metadata: name: nginx-deployment labels: app: nginx spec: replicas: 3 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:1.7.9 ports: - containerPort: 80 可以看出，这里启动是3个版本为1.79的Nginx服务，那么在具体实现上，这个Deployment与ReplicaSet，以及Pod的关系如下图所示：]]></content>
+      <categories>
+        <category>Kubernetes</category>
+        <category>技术学习</category>
+      </categories>
+      <tags>
+        <tag>K8s</tag>
+        <tag>Deployment</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[prometheus学习]]></title>
@@ -15,10 +23,5 @@
       <tags>
         <tag>prometheus</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[第一个博客]]></title>
-    <url>%2F2018%2F12%2F07%2F%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[啦啦啦拉，大家晚上好呀~]]></content>
   </entry>
 </search>
