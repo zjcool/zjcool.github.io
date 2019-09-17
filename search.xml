@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[k8s-常用命令]]></title>
+    <url>%2F2019%2F09%2F17%2FK8S-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[一、POD级别的操作1.获取kube-system命名空间下的所有pod(详细) 1kubectl get po -nkube-system（-o wide） 2.获取kube-system命名空间下名为app1的pod的信息 1kubectl describe po app1 -nkube-system 3.删除kube-system命名空间下名为app1的pod 1kubectl delete po app1 -nkube-system 4.获取kube-system命名空间下名为app1的pod的日志信息 1kubectl logs app1 -nkube-system 二、Deploy级别的操作 1.获取kube-system命名空间下的所有deploy(详细) 1kubectl get deploy -n kube-system（-o wide） 2.编辑kube-system命名空间下的名为deployA 的deploy 1kubectl edit deploy deployA -n kube-system]]></content>
+      <tags>
+        <tag>k8s</tag>
+        <tag>kubernetes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Lamada-List转Map]]></title>
+    <url>%2F2019%2F09%2F17%2FLamada-List-Map%2F</url>
+    <content type="text"><![CDATA[List to Map 一般可以分为以下几种情况: 分组 去重 User.java 1234567891011121314151617181920212223242526272829303132333435363738394041import lombok.AllArgsConstructor;import lombok.Data;import java.util.ArrayList;import java.util.List;import java.util.Map;import java.util.function.Function;import java.util.stream.Collectors;@Data@AllArgsConstructorpublic class User &#123; private String name; private Integer age; private Integer grade; private String sex; public static void main(String[] args) &#123; List&lt;User&gt; users =new ArrayList&lt;&gt;(); users.add(new User(&quot;zhangsan&quot;,18,90,&quot;男&quot;)); users.add(new User(&quot;zhangsan&quot;,19,90,&quot;男&quot;)); users.add(new User(&quot;lisi&quot;,19,91,&quot;女&quot;)); //list to map //1.分组，按照姓名分组 Map&lt;String, List&lt;User&gt;&gt; listMap = users.stream().collect( Collectors.groupingBy(User::getName)); //2.分组统计 男女 Map&lt;String, Long&gt; collect = users.stream().collect( Collectors.groupingBy(User::getSex, Collectors.counting()) ); //3.去重，根据年纪，后面的替换前面的，不加会跑出异常 Map&lt;Integer, User&gt; userMap = users.stream().collect( Collectors.toMap( User::getAge, Function.identity(), (oldUser, newUser) -&gt; newUser)); &#125;&#125;]]></content>
+      <tags>
+        <tag>Lamada</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[莫干山行程计划]]></title>
+    <url>%2F2019%2F09%2F07%2F%E8%8E%AB%E5%B9%B2%E5%B1%B1%E8%A1%8C%E7%A8%8B%E8%AE%A1%E5%88%92%2F</url>
+    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一次出行，嘿嘿 日期 时间 事项 10月2日 08:44 杭州东 —&gt;&gt; 德清 ~ 上午 德清 —&gt;&gt; 莫干山镇 ~ 上午 ~ 下午2点 莫干山镇 ~ 下午2点 莫干山镇 —&gt;&gt; 花木深 10月3日 中午 花木深 —&gt;&gt; 庾村小小农庄 ~ 下午 - 晚上 庾村文化集市 10月4日 早上 ~ 下午3点 莫干山景区 ~ 下午3点 莫干山景区 —&gt;&gt; 德清站 ~ 17:43 德清站 —&gt;&gt; 杭州东]]></content>
+      <tags>
+        <tag>plan</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F09%2F07%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
