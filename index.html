@@ -261,24 +261,15 @@
 
       
           <p>一、POD级别的操作<br>1.获取kube-system命名空间下的所有pod(详细)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get po -nkube-system（-o wide）</span><br></pre></td></tr></table></figure>
-
-<p>2.获取kube-system命名空间下名为<code>app1</code>的pod的信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl describe po app1 -nkube-system</span><br></pre></td></tr></table></figure>
-
-<p>3.删除kube-system命名空间下名为<code>app1</code>的pod</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl delete po app1 -nkube-system</span><br></pre></td></tr></table></figure>
-
-<p>4.获取kube-system命名空间下名为<code>app1</code>的pod的日志信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl logs app1 -nkube-system</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>二、Deploy级别的操作  </p>
-<p>1.获取kube-system命名空间下的所有deploy(详细)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get deploy -n kube-system（-o wide）</span><br></pre></td></tr></table></figure>
-
-<p>2.编辑kube-system命名空间下的名为<code>deployA</code> 的deploy</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl edit deploy deployA -n kube-system</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/17/K8S-常用命令/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -351,12 +342,15 @@
 
       
           <p>List to Map 一般可以分为以下几种情况:</p>
-<ol>
-<li>分组</li>
-<li>去重</li>
-</ol>
-<p><strong>User.java</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">import lombok.AllArgsConstructor;</span><br><span class="line">import lombok.Data;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Map;</span><br><span class="line">import java.util.function.Function;</span><br><span class="line">import java.util.stream.Collectors;</span><br><span class="line"></span><br><span class="line">@Data</span><br><span class="line">@AllArgsConstructor</span><br><span class="line">public class User &#123;</span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    private Integer age;</span><br><span class="line"></span><br><span class="line">    private Integer grade;</span><br><span class="line"></span><br><span class="line">    private String sex;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        List&lt;User&gt; users =new ArrayList&lt;&gt;();</span><br><span class="line">        users.add(new User(&quot;zhangsan&quot;,18,90,&quot;男&quot;));</span><br><span class="line">        users.add(new User(&quot;zhangsan&quot;,19,90,&quot;男&quot;));</span><br><span class="line">        users.add(new User(&quot;lisi&quot;,19,91,&quot;女&quot;));</span><br><span class="line">        //list to map</span><br><span class="line">        //1.分组，按照姓名分组</span><br><span class="line">        Map&lt;String, List&lt;User&gt;&gt; listMap = users.stream().collect(</span><br><span class="line">                Collectors.groupingBy(User::getName));</span><br><span class="line"></span><br><span class="line">        //2.分组统计 男女</span><br><span class="line">        Map&lt;String, Long&gt; collect = users.stream().collect(</span><br><span class="line">                Collectors.groupingBy(User::getSex, Collectors.counting())</span><br><span class="line">        );</span><br><span class="line">        </span><br><span class="line">        //3.去重，根据年纪，后面的替换前面的，不加会跑出异常</span><br><span class="line">        Map&lt;Integer, User&gt; userMap = users.stream().collect(</span><br><span class="line">                        Collectors.toMap(</span><br><span class="line">                        User::getAge, Function.identity(),</span><br><span class="line">                        (oldUser, newUser) -&gt; newUser));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/17/Lamada-List-Map/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -437,61 +431,15 @@
 
       
           <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一次出行，嘿嘿</p>
-<table>
-<thead>
-<tr>
-<th align="center">日期</th>
-<th align="center">时间</th>
-<th align="left">事项</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">10月2日</td>
-<td align="center">08:44</td>
-<td align="left">杭州东 —&gt;&gt; 德清</td>
-</tr>
-<tr>
-<td align="center">~</td>
-<td align="center">上午</td>
-<td align="left">德清 —&gt;&gt; 莫干山镇</td>
-</tr>
-<tr>
-<td align="center">~</td>
-<td align="center">上午 ~ 下午2点</td>
-<td align="left">莫干山镇</td>
-</tr>
-<tr>
-<td align="center">~</td>
-<td align="center">下午2点</td>
-<td align="left">莫干山镇 —&gt;&gt; 花木深</td>
-</tr>
-<tr>
-<td align="center">10月3日</td>
-<td align="center">中午</td>
-<td align="left">花木深 —&gt;&gt; 庾村小小农庄</td>
-</tr>
-<tr>
-<td align="center">~</td>
-<td align="center">下午 - 晚上</td>
-<td align="left">庾村文化集市</td>
-</tr>
-<tr>
-<td align="center">10月4日</td>
-<td align="center">早上 ~ 下午3点</td>
-<td align="left">莫干山景区</td>
-</tr>
-<tr>
-<td align="center">~</td>
-<td align="center">下午3点</td>
-<td align="left">莫干山景区 —&gt;&gt; 德清站</td>
-</tr>
-<tr>
-<td align="center">~</td>
-<td align="center">17:43</td>
-<td align="left">德清站 —&gt;&gt; 杭州东</td>
-</tr>
-</tbody></table>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/07/莫干山行程计划/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
