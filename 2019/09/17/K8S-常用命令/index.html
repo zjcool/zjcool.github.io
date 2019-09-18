@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="一、POD级别的操作">
+  <meta name="description" content="一、POD级别的操作   获取kube-system命名空间下的所有pod(详细) 1kubectl get po -nkube-system（-o wide）  获取kube-system命名空间下名为app1的pod的信息 1kubectl describe po app1 -nkube-system  删除kube-system命名空间下名为app1的pod 1kubectl delete">
 <meta name="keywords" content="k8s,kubernetes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="k8s-常用命令">
 <meta property="og:url" content="http://yoursite.com/2019/09/17/K8S-常用命令/index.html">
 <meta property="og:site_name" content="回归初心，轻装前行">
-<meta property="og:description" content="一、POD级别的操作">
+<meta property="og:description" content="一、POD级别的操作   获取kube-system命名空间下的所有pod(详细) 1kubectl get po -nkube-system（-o wide）  获取kube-system命名空间下名为app1的pod的信息 1kubectl describe po app1 -nkube-system  删除kube-system命名空间下名为app1的pod 1kubectl delete">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-09-18T02:48:59.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="k8s-常用命令">
-<meta name="twitter:description" content="一、POD级别的操作">
+<meta name="twitter:description" content="一、POD级别的操作   获取kube-system命名空间下的所有pod(详细) 1kubectl get po -nkube-system（-o wide）  获取kube-system命名空间下名为app1的pod的信息 1kubectl describe po app1 -nkube-system  删除kube-system命名空间下名为app1的pod 1kubectl delete">
   <link rel="canonical" href="http://yoursite.com/2019/09/17/K8S-常用命令/">
 
 
@@ -313,8 +313,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>一、POD级别的操作  </p><a id="more"></a>
-<ul>
+        <p>一、POD级别的操作  </p><ul>
 <li><p>获取kube-system命名空间下的所有pod(详细)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get po -nkube-system（-o wide）</span><br></pre></td></tr></table></figure>
 </li>
@@ -328,7 +327,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl logs app1 -nkube-system</span><br></pre></td></tr></table></figure>
 
 </li>
-</ul>
+</ul><a id="more"></a>
+
 <hr>
 <p>二、Deploy级别的操作  </p>
 <ul>
