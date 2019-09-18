@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[k8s-常用命令]]></title>
     <url>%2F2019%2F09%2F17%2FK8S-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[一、POD级别的操作1.获取kube-system命名空间下的所有pod(详细) 1kubectl get po -nkube-system（-o wide） 2.获取kube-system命名空间下名为app1的pod的信息 1kubectl describe po app1 -nkube-system 3.删除kube-system命名空间下名为app1的pod 1kubectl delete po app1 -nkube-system 4.获取kube-system命名空间下名为app1的pod的日志信息 1kubectl logs app1 -nkube-system 二、Deploy级别的操作 获取kube-system命名空间下的所有deploy(详细) 1kubectl get deploy -n kube-system（-o wide） 编辑kube-system命名空间下的名为deployA 的deploy 1kubectl edit deploy deployA -n kube-system 更新kube-system命名空间下名为deployA里容器app1的镜像 1kubectl set image deploy deployA app1=nginx:1.9.1 修改kube-system命名空间下名为deployA里容器app1的资源限制 1kubectl set resources deploy deployA -c=app1 --limits=cpu=200m,memory=512Mi 修改kube-system命名空间下名为deployA所有容器的资源限制 1kubectl set resources deploy deployA· --limits=cpu=200m,memory=512Mi]]></content>
+    <content type="text"><![CDATA[一、POD级别的操作 获取kube-system命名空间下的所有pod(详细) 1kubectl get po -nkube-system（-o wide） 获取kube-system命名空间下名为app1的pod的信息 1kubectl describe po app1 -nkube-system 删除kube-system命名空间下名为app1的pod 1kubectl delete po app1 -nkube-system 获取kube-system命名空间下名为app1的pod的日志信息 1kubectl logs app1 -nkube-system 二、Deploy级别的操作 获取kube-system命名空间下的所有deploy(详细) 1kubectl get deploy -n kube-system（-o wide） 编辑kube-system命名空间下的名为deployA 的deploy 1kubectl edit deploy deployA -n kube-system 更新kube-system命名空间下名为deployA里容器app1的镜像 1kubectl set image deploy deployA app1=nginx:1.9.1 修改kube-system命名空间下名为deployA里容器app1的资源限制 1kubectl set resources deploy deployA -c=app1 --limits=cpu=200m,memory=512Mi 修改kube-system命名空间下名为deployA所有容器的资源限制 1kubectl set resources deploy deployA· --limits=cpu=200m,memory=512Mi]]></content>
       <tags>
         <tag>k8s</tag>
         <tag>kubernetes</tag>
@@ -22,6 +22,9 @@
     <title><![CDATA[莫干山行程计划]]></title>
     <url>%2F2019%2F09%2F07%2F%E8%8E%AB%E5%B9%B2%E5%B1%B1%E8%A1%8C%E7%A8%8B%E8%AE%A1%E5%88%92%2F</url>
     <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一次出行，嘿嘿 日期 时间 事项 10月2日 08:44 杭州东 —&gt;&gt; 德清 ~ 上午 德清 —&gt;&gt; 莫干山镇 ~ 上午 ~ 下午2点 莫干山镇 ~ 下午2点 莫干山镇 —&gt;&gt; 花木深 10月3日 中午 花木深 —&gt;&gt; 庾村小小农庄 ~ 下午 - 晚上 庾村文化集市 10月4日 早上 ~ 下午3点 莫干山景区 ~ 下午3点 莫干山景区 —&gt;&gt; 德清站 ~ 17:43 德清站 —&gt;&gt; 杭州东]]></content>
+      <categories>
+        <category>行程安排</category>
+      </categories>
       <tags>
         <tag>plan</tag>
       </tags>
