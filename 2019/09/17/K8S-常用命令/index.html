@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="回归初心，轻装前行">
 <meta property="og:description" content="一、POD级别的操作1.获取kube-system命名空间下的所有pod(详细)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-17T15:22:41.744Z">
+<meta property="og:updated_time" content="2019-09-18T02:47:20.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="k8s-常用命令">
 <meta name="twitter:description" content="一、POD级别的操作1.获取kube-system命名空间下的所有pod(详细)">
@@ -246,11 +246,19 @@
                 
               
 
-              <time title="创建时间：2019-09-17 22:22:00 / 修改时间：23:22:41" itemprop="dateCreated datePublished" datetime="2019-09-17T22:22:00+08:00">2019-09-17</time>
+              <time title="创建时间：2019-09-17 22:22:00" itemprop="dateCreated datePublished" datetime="2019-09-17T22:22:00+08:00">2019-09-17</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-18 10:47:20" itemprop="dateModified" datetime="2019-09-18T10:47:20+08:00">2019-09-18</time>
+              </span>
             
           
 
@@ -279,11 +287,25 @@
 
 <hr>
 <p>二、Deploy级别的操作  </p>
-<p>1.获取kube-system命名空间下的所有deploy(详细)</p>
+<ul>
+<li><p>获取kube-system命名空间下的所有deploy(详细)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get deploy -n kube-system（-o wide）</span><br></pre></td></tr></table></figure>
-
-<p>2.编辑kube-system命名空间下的名为<code>deployA</code> 的deploy</p>
+</li>
+<li><p>编辑kube-system命名空间下的名为<code>deployA</code> 的deploy</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl edit deploy deployA -n kube-system</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新kube-system命名空间下名为<code>deployA</code>里容器<code>app1</code>的镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl set image deploy deployA app1=nginx:1.9.1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改kube-system命名空间下名为<code>deployA</code>里容器<code>app1</code>的资源限制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl set resources deploy deployA -c=app1 --limits=cpu=200m,memory=512Mi</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改kube-system命名空间下名为<code>deployA</code>所有容器的资源限制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl set resources deploy deployA· --limits=cpu=200m,memory=512Mi</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
     </div>
 
     
