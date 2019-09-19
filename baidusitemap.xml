@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://zjcool.github.io/2019/09/17/Lamada-List-Map/</loc>
+    <loc>https://zjcool.github.io/2019/09/19/Java8%E2%80%94Predicate%E7%94%A8%E6%B3%95/</loc>
     <lastmod>2019-09-19</lastmod>
   </url>  <url>
     <loc>https://zjcool.github.io/2019/09/19/Lamada%E2%80%94%E9%81%8D%E5%8E%86%E8%BF%87%E6%BB%A4/</loc>
+    <lastmod>2019-09-19</lastmod>
+  </url>  <url>
+    <loc>https://zjcool.github.io/2019/09/17/Lamada-List-Map/</loc>
     <lastmod>2019-09-19</lastmod>
   </url>  <url>
     <loc>https://zjcool.github.io/2019/09/19/Lamada%E2%80%94%E5%AE%9E%E7%8E%B0runnable/</loc>
