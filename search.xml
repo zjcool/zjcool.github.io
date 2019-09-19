@@ -4,6 +4,12 @@
     <title><![CDATA[Java8—Predicate用法]]></title>
     <url>%2F2019%2F09%2F19%2FJava8%E2%80%94Predicate%E7%94%A8%E6%B3%95%2F</url>
     <content type="text"><![CDATA[每次失眠都要庆幸，多了一次可以深刻思考的机会！废话说完,直接上代码：筛选以字母c结尾的字符串1Predicate&lt;String&gt; condition2 = s -&gt; s.endsWith(&quot;c&quot;);筛选以字母a开头的字符串12345Predicate&lt;String&gt; condition1 = s -&gt; s.startsWith(&quot;a&quot;);boolean res1 = condition1.test(&quot;abc&quot;); //true//negate 取反的意思boolean res2 = condition1.negate().test(&quot;abc&quot;) //false筛选以字母a开头 且 以字母c结尾的字符串1Predicate&lt;String&gt; and = condition.and(condition2);筛选以字母a开头 或 以字母c结尾的字符串1Predicate&lt;String&gt; and = condition.or(condition2);筛选大于3的数字1Predicate&lt;Integer&gt; condition2 = a -&gt; a &gt;=3;遍历集合删除以a开头的字符串1List&lt;String&gt; res4 = list.stream().filter(condition1.negate()).collect(Collectors.toList(););]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Predicate</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Lamada—遍历过滤]]></title>
