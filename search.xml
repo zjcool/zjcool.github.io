@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[k8s-常用命令]]></title>
+    <title><![CDATA[Lamada—遍历过滤]]></title>
+    <url>%2F2019%2F09%2F19%2FLamada%E2%80%94%E9%81%8D%E5%8E%86%E8%BF%87%E6%BB%A4%2F</url>
+    <content type="text"><![CDATA[java8以前，想对list集合进行过滤12345678910111213141516171819202122//不要用Arrays.asList,迭代器删除会失败List&lt;String&gt; list = new ArrayList&lt;&gt;(3);list.add(&quot;abc&quot;);list.add(&quot;bbc&quot;);list.add(&quot;cbc&quot;);//过滤以字母 a 开头的字符串List&lt;String&gt; res = new ArrayList&lt;&gt;();for (String s : list) &#123; if (!s.startsWith(&quot;a&quot;)) &#123; res.add(s); &#125;&#125;//或者这样Iterator&lt;String&gt; it = list.iterator();while (it.hasNext()) &#123; String next = it.next(); if (next.startsWith(&quot;a&quot;)) &#123; it.remove(); &#125;&#125;java8使用lamada实现如下：1List&lt;String&gt; res = list.stream().filter(s -&gt; !s.startsWith(&quot;a&quot;)).collect(Collectors.toList());]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Lamada</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Lamada—实现runnable]]></title>
+    <url>%2F2019%2F09%2F19%2FLamada%E2%80%94%E5%AE%9E%E7%8E%B0runnable%2F</url>
+    <content type="text"><![CDATA[在 Java8 之前开一个新的线程执行任务,具体代码实现如下：1234567//java8 之前new Thread(new Runnable() &#123; @Override public void run() &#123; System.out.println(&quot;开一个新的线程，执行任务了&quot;); &#125; &#125;).start();而java8 提供了lamada表达式，我们可以这样实现：1new Thread(() -&gt; System.out.println(&quot;开一个新的线程，执行任务了&quot;)).start();怎么样，这样的匿名内部实现是不是非常的简单呢！补充：Calculate 是一个接口，里面有一个接口方法cal。如果你想实现该接口，但又不想建一个新的类，可以写成如下这样：12Calculate calculate = (int a, int b) -&gt; a + b;calculate.cal(1,2);]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Lamada</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[k8s—常用命令]]></title>
     <url>%2F2019%2F09%2F17%2FK8S-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[一、POD级别的操作获取kube-system命名空间下的所有pod(详细)1kubectl get po -nkube-system（-o wide）获取kube-system命名空间下名为app1的pod的信息1kubectl describe po app1 -nkube-system删除kube-system命名空间下名为app1的pod1kubectl delete po app1 -nkube-system获取kube-system命名空间下名为app1的pod的日志信息1kubectl logs app1 -nkube-system二、Deploy级别的操作获取kube-system命名空间下的所有deploy(详细)1kubectl get deploy -n kube-system（-o wide）编辑kube-system命名空间下的名为deployA 的deploy1kubectl edit deploy deployA -n kube-system更新kube-system命名空间下名为deployA里容器app1的镜像1kubectl set image deploy deployA app1=nginx:1.9.1修改kube-system命名空间下名为deployA里容器app1的资源限制1kubectl set resources deploy deployA -c=app1 --limits=cpu=200m,memory=512Mi修改kube-system命名空间下名为deployA所有容器的资源限制1kubectl set resources deploy deployA· --limits=cpu=200m,memory=512Mi]]></content>
       <tags>
@@ -10,12 +32,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Lamada-List转Map]]></title>
+    <title><![CDATA[Lamada—List转Map]]></title>
     <url>%2F2019%2F09%2F17%2FLamada-List-Map%2F</url>
     <content type="text"><![CDATA[List to Map 一般可以分为以下几种情况:分组去重User.java1234567891011121314151617181920212223242526272829303132333435363738394041import lombok.AllArgsConstructor;import lombok.Data;import java.util.ArrayList;import java.util.List;import java.util.Map;import java.util.function.Function;import java.util.stream.Collectors;@Data@AllArgsConstructorpublic class User &#123; private String name; private Integer age; private Integer grade; private String sex; public static void main(String[] args) &#123; List&lt;User&gt; users =new ArrayList&lt;&gt;(); users.add(new User(&quot;zhangsan&quot;,18,90,&quot;男&quot;)); users.add(new User(&quot;zhangsan&quot;,19,90,&quot;男&quot;)); users.add(new User(&quot;lisi&quot;,19,91,&quot;女&quot;)); //list to map //1.分组，按照姓名分组 Map&lt;String, List&lt;User&gt;&gt; listMap = users.stream().collect( Collectors.groupingBy(User::getName)); //2.分组统计 男女 Map&lt;String, Long&gt; collect = users.stream().collect( Collectors.groupingBy(User::getSex, Collectors.counting()) ); //3.去重，根据年纪，后面的替换前面的，不加会跑出异常 Map&lt;Integer, User&gt; userMap = users.stream().collect( Collectors.toMap( User::getAge, Function.identity(), (oldUser, newUser) -&gt; newUser)); &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
       <tags>
         <tag>Lamada</tag>
-        <tag>Java</tag>
       </tags>
   </entry>
 </search>
