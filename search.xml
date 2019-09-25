@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【mac操作】-制作系统盘以及恢复]]></title>
+    <url>%2F2019%2F09%2F25%2F%E3%80%90mac%E6%93%8D%E4%BD%9C%E3%80%91-%E5%88%B6%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9B%98%E4%BB%A5%E5%8F%8A%E6%81%A2%E5%A4%8D%2F</url>
+    <content type="text"><![CDATA[一、制作系统操作盘1.下载操作系统镜像iso2.查看u盘 diskutil list , /dev/disk2是u盘12345678910111213141516171819202122232425262728~ » diskutil list /dev/disk0 (internal): #: TYPE NAME SIZE IDENTIFIER 0: GUID_partition_scheme 251.0 GB disk0 1: EFI EFI 314.6 MB disk0s1 2: Apple_APFS Container disk1 250.7 GB disk0s2/dev/disk1 (synthesized): #: TYPE NAME SIZE IDENTIFIER 0: APFS Container Scheme - +250.7 GB disk1 Physical Store disk0s2 1: APFS Volume Macintosh HD 125.8 GB disk1s1 2: APFS Volume Preboot 44.4 MB disk1s2 3: APFS Volume Recovery 509.7 MB disk1s3 4: APFS Volume VM 9.7 GB disk1s4/dev/disk2 (external, physical): #: TYPE NAME SIZE IDENTIFIER 0: GUID_partition_scheme *15.9 GB disk2 1: EFI EFI 209.7 MB disk2s1 2: Microsoft Basic Data StarkyDisk 15.7 GB disk2s2``` 3.解除u盘的挂载状态 ```diskutil unmountDisk /dev/disk24.写入u盘sudo dd if=iso镜像路径 of=/dev/rdisk2 bs=1m rdisk二、恢复u盘1diskutil eraseDisk ExFAT myDisk /dev/disk2]]></content>
+      <tags>
+        <tag>mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[[线上问题]-记一次线上问题的解决方案]]></title>
     <url>%2F2019%2F09%2F25%2F%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%2F</url>
     <content type="text"><![CDATA[未解决之前存在问题老的java服务，源代码已经找不到了客户需要的接口返回参数里 加了密，加密方式为AES由于该秘钥在其他很多服务中都使用着，不能直接提供给客户使用新的服务，还没有经过测试，无法直接上线，就算能获得测试资源，上线的时间也不能满足客户的需求最终解决方案增加一个代理服务，去调用老的服务，把返回参数解密后返回给客户优点：客户只需要换一下调用的服务端口即可上线非常快（半个小时开发时间）无需关心老的接口]]></content>
