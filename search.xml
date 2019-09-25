@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[记一次线上问题解决方案]]></title>
+    <url>%2F2019%2F09%2F25%2F%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%2F</url>
+    <content type="text"><![CDATA[未解决之前存在问题老的java服务，源代码已经找不到了客户需要的接口返回参数里 加了密，加密方式为AES由于该秘钥在其他很多服务中都使用着，不能直接提供给客户使用新的服务，还没有经过测试，无法直接上线，就算能获得测试资源，上线的时间也不能满足客户的需求最终解决方案增加一个代理服务，去调用老的服务，把返回参数解密后返回给客户优点：客户只需要换一下调用的服务端口即可上线非常快（半个小时开发时间）无需关心老的接口]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[java—获取当天剩余秒数]]></title>
     <url>%2F2019%2F09%2F23%2Fjava%E2%80%94%E8%8E%B7%E5%8F%96%E5%BD%93%E5%A4%A9%E5%89%A9%E4%BD%99%E7%A7%92%E6%95%B0%2F</url>
     <content type="text"><![CDATA[获取当天剩余秒数两种方法1.线程不安全12345678910public static Integer getLeftTime() &#123; Calendar midnight=Calendar.getInstance(); midnight.setTime(new Date()); midnight.add(midnight.DAY_OF_MONTH,1);//加一天 midnight.set(midnight.HOUR_OF_DAY,0); midnight.set(midnight.MINUTE,0); midnight.set(midnight.SECOND,0); midnight.set(midnight.MILLISECOND,0); return (int)((midnight.getTime().getTime()-currentDate.getTime())/1000); &#125;2.线程安全12345678910 Date now = new Date(); LocalDateTime midnight = LocalDateTime.ofInstant(now.toInstant(), ZoneId.systemDefault()); midnight.plusDays(1) .withHour(0) .withMinute(0) .withSecond(0) .withNano(0); LocalDateTime current = LocalDateTime.ofInstant(now.toInstant(), ZoneId.systemDefault()); return (int) ChronoUnit.SECONDS.between(current, midnight);&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Date</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Java8—Predicate用法]]></title>
