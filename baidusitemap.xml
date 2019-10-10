@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://zjcool.github.io/2019/09/17/K8S-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2019-10-10</lastmod>
+  </url>  <url>
     <loc>https://zjcool.github.io/2019/10/08/%E3%80%90java%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4%E3%80%91/</loc>
     <lastmod>2019-10-10</lastmod>
   </url>  <url>
@@ -20,9 +23,6 @@
     <lastmod>2019-09-25</lastmod>
   </url>  <url>
     <loc>https://zjcool.github.io/2019/09/17/Lamada-List-Map/</loc>
-    <lastmod>2019-09-25</lastmod>
-  </url>  <url>
-    <loc>https://zjcool.github.io/2019/09/17/K8S-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2019-09-25</lastmod>
   </url>  <url>
     <loc>https://zjcool.github.io/2019/09/19/Lamada%E2%80%94%E5%AE%9E%E7%8E%B0runnable/</loc>

@@ -88,6 +88,9 @@
     <title><![CDATA[【k8s】- 常用命令]]></title>
     <url>%2F2019%2F09%2F17%2FK8S-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[一、POD级别的操作获取kube-system命名空间下的所有pod(详细)1kubectl get po -nkube-system（-o wide）获取kube-system命名空间下名为app1的pod的信息1kubectl describe po app1 -nkube-system删除kube-system命名空间下名为app1的pod1kubectl delete po app1 -nkube-system获取kube-system命名空间下名为app1的pod的日志信息1kubectl logs app1 -nkube-system二、Deploy级别的操作获取kube-system命名空间下的所有deploy(详细)1kubectl get deploy -n kube-system（-o wide）编辑kube-system命名空间下的名为deployA 的deploy1kubectl edit deploy deployA -n kube-system更新kube-system命名空间下名为deployA里容器app1的镜像1kubectl set image deploy deployA app1=nginx:1.9.1修改kube-system命名空间下名为deployA里容器app1的资源限制1kubectl set resources deploy deployA -c=app1 --limits=cpu=200m,memory=512Mi修改kube-system命名空间下名为deployA所有容器的资源限制1kubectl set resources deploy deployA· --limits=cpu=200m,memory=512Mi]]></content>
+      <categories>
+        <category>k8s</category>
+      </categories>
       <tags>
         <tag>k8s</tag>
         <tag>kubernetes</tag>
