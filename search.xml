@@ -4,11 +4,17 @@
     <title><![CDATA[【K8s】- 揭秘K8s健康检查机制 LivenessProbe和ReadinessProbe]]></title>
     <url>%2F2019%2F10%2F10%2F%E3%80%90K8s%E3%80%91-%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5%E6%9C%BA%E5%88%B6%2F</url>
     <content type="text"><![CDATA[从接触k8s，到目前已经差不多一年时间了，但是对k8s的健康检查机制一直很模糊，今天对其进行了一番研究，记录如下：概述k8s的健康机制主要是通过两个探测机制：LivenessProbe和ReadinessProbe。LivenessProbe:用于判断容器是否存活（running状态），来确定是否需要重启容器。ReadinessProbe:用于判断容器是否启动完成（ready状态）,来确定是否可以接受流量（请求）。探测方式k8s是通过探测的方式来判断pod是否正常的，那么k8s支持的探测方式有哪些呢？其主要是以下三种：HTTP GET探针 对容器内的目标ip和端口发送HTTP GET请求。响应状态码是2xx或3xx 表示成功。TCP 套接字探针 尝试建立TCP连接，成功建立则成功。Exec探针，在容器内执行shell命令，根据返回结果判断是否成功]]></content>
+      <categories>
+        <category>K8s</category>
+      </categories>
   </entry>
   <entry>
-    <title><![CDATA[【java排查问题】]]></title>
+    <title><![CDATA[【java】- 排查问题命令]]></title>
     <url>%2F2019%2F10%2F08%2F%E3%80%90java%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4%E3%80%91%2F</url>
     <content type="text"><![CDATA[获取java程序的pid1jps -v查看占用cpu最高线程1top -Hp pid查看某个线程的堆栈信息123//获取 线程id的十六进制printf &quot;%x\n&quot; 线程id jstack pid |grep &lt;16进制&gt;查看堆内存使用情况1jmap -heap pid查看堆内存中的对象数目，大小1jmap -histo:live pid统计jvm信息-查看gc信息（1000毫秒 4次）1jstat -gc pic 1000 4]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[【排序算法】- 冒泡排序]]></title>
