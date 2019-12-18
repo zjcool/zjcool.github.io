@@ -7,6 +7,10 @@
       <categories>
         <category>明明白白系列</category>
       </categories>
+      <tags>
+        <tag>jdk源码</tag>
+        <tag>数据结构</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[【springboot源码解析】-- 解读过程一]]></title>
