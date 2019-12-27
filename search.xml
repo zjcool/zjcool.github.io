@@ -9,7 +9,7 @@
       </categories>
       <tags>
         <tag>ArrayList</tag>
-        <tag>jd&#39;k</tag>
+        <tag>jdk</tag>
       </tags>
   </entry>
   <entry>
@@ -87,7 +87,7 @@
   <entry>
     <title><![CDATA[【java】- 排查问题命令]]></title>
     <url>%2F2019%2F10%2F08%2F%E3%80%90java%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4%E3%80%91%2F</url>
-    <content type="text"><![CDATA[获取java程序的pid1jps -v查看占用cpu最高线程1top -Hp pid查看某个线程的堆栈信息123//获取 线程id的十六进制printf &quot;%x\n&quot; 线程id jstack pid |grep &lt;16进制&gt;查看堆内存使用情况1jmap -heap pid查看堆内存中的对象数目，大小1jmap -histo:live pid统计jvm信息-查看gc信息（1000毫秒 4次）1jstat -gc pid 1000 4统计jvm信息-查看gc信息比例（1000毫秒 4次）重要1jstat -gcutil pid 1000 4dump heap 命令1jmap -dump:live,format=b,file=heapLive.hprof pid]]></content>
+    <content type="text"><![CDATA[获取java程序的pid1jps -v查看占用cpu最高线程1top -Hp pid查看某个线程的堆栈信息123//获取 线程id的十六进制printf &quot;%x\n&quot; 线程id jstack pid |grep &lt;16进制&gt;查看堆内存使用情况1jmap -heap pid查看堆内存中的对象数目，大小1jmap -histo:live pid统计jvm信息-查看gc信息（1000毫秒 4次）1jstat -gc pid 1000 4统计jvm信息-查看gc信息比例（1000毫秒 4次）1jstat -gcutil pid 1000 4dump heap 命令1jmap -dump:live,format=b,file=heapLive.hprof pid]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -175,7 +175,7 @@
   <entry>
     <title><![CDATA[【Lamada】- List转Map]]></title>
     <url>%2F2019%2F09%2F17%2FLamada-List-Map%2F</url>
-    <content type="text"><![CDATA[List to Map 一般可以分为以下几种情况:分组去重User.java1234567891011121314151617181920212223242526272829303132333435363738394041import lombok.AllArgsConstructor;import lombok.Data;import java.util.ArrayList;import java.util.List;import java.util.Map;import java.util.function.Function;import java.util.stream.Collectors;@Data@AllArgsConstructorpublic class User &#123; private String name; private Integer age; private Integer grade; private String sex; public static void main(String[] args) &#123; List&lt;User&gt; users =new ArrayList&lt;&gt;(); users.add(new User(&quot;zhangsan&quot;,18,90,&quot;男&quot;)); users.add(new User(&quot;zhangsan&quot;,19,90,&quot;男&quot;)); users.add(new User(&quot;lisi&quot;,19,91,&quot;女&quot;)); //list to map //1.分组，按照姓名分组 Map&lt;String, List&lt;User&gt;&gt; listMap = users.stream().collect( Collectors.groupingBy(User::getName)); //2.分组统计 男女 Map&lt;String, Long&gt; collect = users.stream().collect( Collectors.groupingBy(User::getSex, Collectors.counting()) ); //3.去重，根据年纪，后面的替换前面的，不加会跑出异常 Map&lt;Integer, User&gt; userMap = users.stream().collect( Collectors.toMap( User::getAge, Function.identity(), (oldUser, newUser) -&gt; newUser)); &#125;&#125;]]></content>
+    <content type="text"><![CDATA[List to Map 一般可以分为以下几种情况:分组去重User.java1234567891011121314151617181920212223242526272829303132333435363738394041import lombok.AllArgsConstructor;import lombok.Data;import java.util.ArrayList;import java.util.List;import java.util.Map;import java.util.function.Function;import java.util.stream.Collectors;@Data@AllArgsConstructorpublic class User &#123; private String name; private Integer age; private Integer grade; private String sex; public static void main(String[] args) &#123; List&lt;User&gt; users =new ArrayList&lt;&gt;(); users.add(new User("zhangsan",18,90,"男")); users.add(new User("zhangsan",19,90,"男")); users.add(new User("lisi",19,91,"女")); //list to map //1.分组，按照姓名分组 Map&lt;String, List&lt;User&gt;&gt; listMap = users.stream().collect( Collectors.groupingBy(User::getName)); //2.分组统计 男女 Map&lt;String, Long&gt; collect = users.stream().collect( Collectors.groupingBy(User::getSex, Collectors.counting()) ); //3.去重，根据年纪，后面的替换前面的，不加会跑出异常 Map&lt;Integer, User&gt; userMap = users.stream().collect( Collectors.toMap( User::getAge, Function.identity(), (oldUser, newUser) -&gt; newUser)); &#125;&#125;]]></content>
       <categories>
         <category>Java</category>
       </categories>
