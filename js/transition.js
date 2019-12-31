@@ -1,3 +1,3 @@
-// build time:Mon Dec 30 2019 18:38:39 GMT+0800 (中国标准时间)
+// build time:Tue Dec 31 2019 09:49:12 GMT+0800 (中国标准时间)
 $(function(){$(".layout").velocity("stop").velocity("transition.slideUpIn",{delay:500,duration:1e3,easing:"easeInOutQuart",complete:function(){if($(".sidebar-toc").length>0){setTimeout(function(){$("#toggle-sidebar").click()},200)}}});$("#top-container").velocity("stop").velocity("transition.fadeIn",{delay:500,duration:1e3,easing:"easeInOutQuart"})});
 //rebuild by neat 
