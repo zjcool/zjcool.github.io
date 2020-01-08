@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[python-文件目录http服务器]]></title>
     <url>%2F2020%2F01%2F08%2Fpython-%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95http%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
-    <content type="text"><![CDATA[有些场景中我们可能临时需要在容器内，获取某个服务器上的多个文件，正常的步骤是先将文件上传到容器所在服务器，再将文件复制到容器中。如果每个文件都这样操作就会很繁琐。（当然，其他获取文件的场景也适用）有个小技巧，将该目录转变成一个文件http服务，向外提供下载。1. 生成http文件服务1.1 python2 实现1python -m SimpleHttpServer 1000010000 是http端口1.2 python3 实现1python3 -m http.server 100002. 在容器内获取1wget http://ip:10000/file]]></content>
+    <content type="text"><![CDATA[前言在有些场景中，我们需要在容器内，获取某个服务器上的多个文件。我们该如何获取呢？正常的步骤是先将文件上传到容器所在服务器，再将文件复制到容器中。这样做当然可以，但如果每个文件都这样，就会显得十分繁琐（当然，其他获取文件的场景也适用）。这里有个小技巧推荐给大家：将该目录转变成一个文件http服务，向外提供下载。生成http文件服务python 提供了很多非常有用的功能，其中一个就是http文件服务。python2 实现1python -m SimpleHttpServer 1000010000 是 http 服务端口python3 实现1python3 -m http.server 10000在容器内获取1wget http://ip:10000/file]]></content>
       <categories>
         <category>利其器系列</category>
       </categories>
